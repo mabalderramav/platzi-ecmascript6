@@ -91,14 +91,14 @@ let listOfNames2 = names.map(item => console.log(item.name));
 
 const listOfNames3 = (name, age, country) => console.log(name);
 
-const listOfNames4 = name => {
-    ...
-};
+// const listOfNames4 = name => {
+//     ...
+// };
 
 const square = num => num * num;
 
 const helloPromise = () => {
-    retur new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         if(true){
             resolve('Hey!');
         } else{
@@ -111,3 +111,33 @@ helloPromise()
 .then(response => console.log(response))
 .then(()=> console.log('hola sip'))
 .catch(error => console.log(error));
+
+class Calculator {
+    constructor(){
+        this.valueA = 0;
+        this.valueB = 0;
+    }
+
+    sum(valueA, valueB){
+        this.valueA = valueA;
+        this.valueB = valueB;
+
+        return this.valueA + this.valueB;
+    }
+}
+
+const calc = new Calculator();
+console.log(calc.sum(6,7));
+
+import { hello } from './module';
+
+hello();
+
+function* helloWorld(){
+    if(true){
+        yield 'Hello, ';
+    }
+    if(true){
+        yield 'world';
+    }
+}
